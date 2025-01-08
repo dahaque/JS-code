@@ -27,11 +27,12 @@ let myObj = {
     age: 22,
 }
 
-//we can store a function inside a variable and the typeof myFunction will also be function
+// we can store a function inside a variable and the typeof myFunction will also be function.
 const myFunction = function(){
     console.log("Hello world");
 }
 
+console.log
 console.log(typeof myFunction);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
