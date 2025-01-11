@@ -19,6 +19,6 @@ console.log(undefined == 0);
 console.log(undefined > 0);
 console.log(undefined < 0);
              
-// IMPORTANT => === (checks the object and datatype as well)
+// IMPORTANT => === (checks the object and datatype as well).
              
 console.log("2" === 2);             
