@@ -44,7 +44,7 @@ let str3 = str1 + str2
 
 // Confusing stuff:
 // console.log("1" + 2 + 2); (If the first operand is String then whole output will be treated as a String)
-// console.log(1 + 2 + "2"); (If the first operand is Number then operations will be performed and the String will be concatenated eventually)
+// console.log(1 + 2 + "2"); (If the first operand is Number then operations will be performed and the String will be concatenated eventually).
 
 // console.log(+true); => 1
 // console.log(+"");  => 0
