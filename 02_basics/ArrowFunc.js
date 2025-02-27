@@ -47,7 +47,7 @@ chai()
 //SAME ARROW FUNCTION BUT IN ONE LINE (implicit return)
 // const addTwo = (num1, num2) =>  num1 + num2
 // const addTwo = (num1, num2) => ( num1 + num2 )
-
+    
 //implicit returning an object
 const addTwo = (num1, num2) => ({username: "hitesh"}) 
 
