@@ -13,7 +13,7 @@ const user = {
 // user.welcomeMessage()
 
 //IMPORTANT *******
-console.log(this) // gives empty object{} [as Global object] because we are running this in node  
+console.log(this) // gives empty object{} [as Global object] because we are running this in node environment
 // but if we run this in browser then it will give a window object as a Global object
 
 // function chai(){
