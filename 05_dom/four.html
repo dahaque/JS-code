@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //This function traverses the whole DOm tree to add element to the Last (not so optimized)
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerText = `${langName}`;
+        const newli = document.querySelector(".language").appendChild(li)
+        //newli.style.color = "green"
+    }
+    addLanguage("Java");
+    addLanguage("python");
+    addLanguage("ruby");
+
+    //to do this in a more optimized way (does the same without traversing the whole tree)
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        const addText = document.createTextNode(langName);
+        li.appendChild(addText)
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptiLanguage("GoLang");
+
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    //secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>
