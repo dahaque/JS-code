@@ -11,7 +11,7 @@
 <script>
     const requestURL = 'https://api.github.com/users/dahaque';
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', requestURL)
+    xhr.open('GET', requestURL);
     xhr.onreadystatechange = function(){
         console.log(xhr.readyState);
         if(xhr.readyState === 4){
