@@ -109,3 +109,5 @@ fetch('https://api.github.com/users/dahaque')
 .catch( (error) => {
     console.log('E',error);
 } )
+
+// study promise.all()
