@@ -83,3 +83,29 @@ async function consumePromiseFive(){
 }
 
 consumePromiseFive()
+
+// Intro of fetch with async await.
+async function getUserData(){
+   try {
+        const response = await fetch('https://api.github.com/users/dahaque'); //fetch returns a promise.
+        const data = await response.json() // IMP -> Here conversion of response takes time so we have to user 'await' here also.
+        console.log(data);
+   } catch (error) {
+        console.log('E : ',error);
+   }
+}
+
+getUserData();
+
+//Writing same code of fetch() with .then()
+
+fetch('https://api.github.com/users/dahaque')
+.then( (response) => {
+   return response.json(); //conversion of response and passing it into second .then() as data 
+} )
+.then( (data) => {
+    console.log(data);
+} )
+.catch( (error) => {
+    console.log('E',error);
+} )
