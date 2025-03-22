@@ -10,15 +10,15 @@ document.addEventListener('keypress', function(){
     if(gameStarted === false){
         console.log("Game is started");
         gameStarted = true;
-
         levelUp();
     }
 })
 
 function levelUp(){
+    userSeq = [];
     level++;
     h2.innerText = `Level : ${level}`;
-    let randomIndex = Math.floor(Math.random() * 3);
+    let randomIndex = Math.floor(Math.random() * 4);
     let randomColor = colors[randomIndex];
     let randombtn = document.querySelector(`.${randomColor}`);
     gameSeq.push(randomColor);
@@ -39,15 +39,44 @@ function Userflash(btn){
     } ,300)
 }
 
+function checkColor(index){
+
+    if(gameSeq[index] === userSeq[index]){
+        if(userSeq.length == gameSeq.length){  
+          setTimeout(levelUp,1000);
+        }
+    }else{
+        h2.innerText = `GAME OVER! Your score was ${level} \n Press any key to restart`;
+        resetGame();
+    }
+}
+
 function btnPress(){
     let btn = this;
     Userflash(btn)
     
-    btnColor = btn.getAttribute("id");
+    let btnColor = btn.getAttribute("id");
     userSeq.push(btnColor);
+
+    checkColor(userSeq.length-1);
 }
 
 let allbtns = document.querySelectorAll(".btn");
-for(btn of allbtns){
+for(let btn of allbtns){
     btn.addEventListener("click", btnPress);
+}
+
+function resetGame(){
+    gameStarted = false;
+    gameSeq = [];
+    userSeq = [];
+    level = 0;
+
+    document.addEventListener('keypress', function(){
+        if(gameStarted === false){
+            console.log("Game is started");
+            gameStarted = true;
+            levelUp();
+        }
+    }, { once: true }); 
 }
