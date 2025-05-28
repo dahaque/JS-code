@@ -25,7 +25,7 @@ createUser.prototype.increment = function(){
 }
 
 // The "new" keyword basically tells the 'chai' object to create a new object and link the properties of createUser function, 
-// and the injected properties of the prototype together, if we dont use the "new" keyword it will throw undefined properties fot 'printMe' 
+// and the injected properties of the prototype together, if we dont use the "new" keyword it will throw undefined properties fot 'printMe'. 
 createUser.prototype.printMe = function(){
     console.log(`price is ${this.score}`);
 }
