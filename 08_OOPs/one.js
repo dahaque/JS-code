@@ -35,6 +35,6 @@ console.log(userOne.constructor);
 //console.log(userTwo);
 
 // IMP
-// this in global context gives empty object{} but only in node environment
+// this in global context gives empty object{} but only in node environment.
 // but if we run this same line in browser we will get a window object.
 console.log(this);
