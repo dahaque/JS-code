@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // lexical scoping(Inner fucntion has access to the local variables of the outer function but the outer fuction cannot access the inner function's local variable)
+
+    function init() {
+        let name = "Mozilla"; 
+        function displayName() {
+            console.log(name); 
+        }
+        displayName();
+    }
+    init();
+    
+   // Concept of closure  
+   // Here the 'return displayName' returns the whole displayName() function and the lexical scope of the makeFunc() function{access to the local variables}
+   // This is called closure 
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+         }
+        return displayName;
+      }
+
+    const myFunc = makeFunc();
+    myFunc();
+
+</script>
+ <script>
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        // Real world example of closure.
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+
+    </script>
+</html>
